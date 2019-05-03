@@ -147,6 +147,7 @@ button{
   font-weight: bold;
   white-space: nowrap;
   padding: 0 3%;
+  transition: color .5s;
 }
 button:hover{
   background-color: white;
