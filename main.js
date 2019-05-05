@@ -99,14 +99,12 @@ $("#arrow-left")[0].addEventListener("click", function(){
 })
 returnButton[0].addEventListener("click", function(){
     window.scrollTo(0,0);
-
     setTimeout(function(){
         returnButton.hide();
         var previousArtist = currentArtist;
         currentArtist = 0;
         biobox.slideUp(450);
         biolist[previousArtist].hide();
-       
     }, 250)
                 
 })
