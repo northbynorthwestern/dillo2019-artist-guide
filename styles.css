@@ -1,6 +1,9 @@
 html{
   scroll-behavior: smooth;
 }
+.authorname{
+  color:black;
+}
 body{
   background-image: url("tilepattern.png");
   background-repeat: repeat;
