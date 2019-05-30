@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html>
 <head>
-        <link href="styles.css" rel="stylesheet">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <style>
             @import url('https://fonts.googleapis.com/css?family=Gugi');
@@ -12,8 +11,412 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
       </head>
 <body>
-    <!-- <header id="article-header"></header> -->
- <div id="article-container">
+  <style>
+    html{
+  scroll-behavior: smooth;
+}
+.authorname{
+  color:black;
+}
+body{
+  background-image: url("http://media.northbynorthwestern.com.s3.amazonaws.com/uploads/2019/05/29/tilepattern.png");
+  background-repeat: repeat;
+  background-color:black;
+  overflow-x: hidden;
+  overflow-y: auto;
+
+}
+
+::-webkit-scrollbar-thumb {
+  background: yellow; 
+  border-radius: 10px;
+
+}
+@media screen and (min-width: 960px){
+  ::-webkit-scrollbar {
+    height: 5px;
+    width: 5px;
+  }
+#intro-text-smallscreen{
+  display: none;
+}
+#article-container{
+  display: grid;
+  /* background-image: url("tilepattern.");
+  background-repeat: repeat; */
+  height: 95vh;
+  width: 100vw;
+  grid-template-columns: auto 10% 10% 10% 10% 10% 10%  10% auto;
+  grid-template-rows: 5% 2.5% 5% 5% fit-content(100%) 3.5% 30% fit-content(100%)  5% 10% 10%;
+}
+#article-title{
+  background-color: black;
+  padding: 0 1%;
+  border: 2px solid white;
+  font-family: 'Gugi', cursive;
+  color:rgb(208, 255, 0);
+grid-column: 2 / 9;
+grid-row: 3;
+  justify-self: center;
+  align-self: center;
+  font-size: 300%;
+  font-weight: bold;
+}
+#intro-text{
+  padding: 1% 0;
+  font-size: 100%;
+  font-family: 'Roboto Mono', monospace;
+  text-align: center;
+  background-color: black;
+  border: 2px solid white;
+  color: white;
+  grid-column: 2 / 9;
+  grid-row: 5;
+}
+#artist-container{
+  padding-top: 1%;
+  background-image: url("http://media.northbynorthwestern.com.s3.amazonaws.com/uploads/2019/05/29/coolaesthetic-two.png");
+  border: 2px solid white;
+  background-repeat: repeat;
+  scroll-behavior: smooth;
+  overflow-x: scroll;
+  overflow-y: hidden;
+  grid-column: 2 / 9;
+  grid-row: 7;
+  height: 30vh;
+  display: flex;
+  flex-direction: row;
+  
+ align-self: center;
+}
+.artist:hover{
+  transform: scale(1.2);
+
+}
+.artist{
+  height: 25vh;
+  width: 30vw;
+  margin: 0 5%;
+  transition: transform .5s;
+  transform: scale(1.0);
+}
+img{
+  height: 30vh;
+}
+#bio-container{
+  /* background-color: rgb(0, 49, 15); */
+  background-image: url("http://media.northbynorthwestern.com.s3.amazonaws.com/uploads/2019/05/29/coolaesthetic-dark.png");
+  background-repeat: repeat;
+  grid-column: 2 /9;
+  grid-row: 8;
+  border: 2px solid white;
+  overflow-y: scroll;
+  height: 80vh;
+}
+.artist-bio{
+  color: black;
+  margin: 0 15%;
+}
+#arrow-right{
+  justify-self: center;
+  grid-column: 9;
+  grid-row: 7;
+  transform: scale(.7);
+  transition: transform .5s;
+}
+#arrow-right:hover{
+  /* grid-column: 9;
+  grid-row: 7; */
+  transform: scale(.9);
+}
+#arrow-left{
+  justify-self: center;
+  grid-column: 1;
+  grid-row: 7;
+  transform: scale(.7);
+  transition: transform .5s;
+}
+#arrow-left:hover{
+  /* grid-column: 1;
+  grid-row: 7; */
+  transform: scale(.9);
+}
+#return{
+  grid-column: 5;
+  grid-row: 9;
+  margin: 3%;
+}
+h2{
+  font-family: 'Gugi', cursive;
+}
+p{
+  background-color: white;
+  padding: 1% 1%;
+  border: 2px solid black;
+  font-family: 'Roboto Mono', monospace;
+}
+button{
+  background-color: black;
+  border: 2px solid white;
+  color: white;
+  width: 100%;
+  /* font-family: 'Gugi', cursive; */
+  font-family: 'Roboto Mono', monospace;
+  font-weight: bold;
+  white-space: nowrap;
+  padding: 0 3%;
+  transition: color .5s;
+}
+button:hover{
+  background-color: white;
+  color: black;
+}
+.heading-container{
+  background-color: white;
+  border: 2 px solid black;
+}
+.bioheading{
+  text-align: center;
+  /* background-color: white;
+  border: 2px solid black; */
+  margin-bottom: 0;
+}
+.writername{
+  text-align: center;
+  margin-top: 0;
+  /* font-family: 'Roboto Condensed', sans-serif; */
+  font-family: 'Gugi', cursive;
+}
+#homepage-footer{
+grid-row: 10;
+grid-column: 2 / 9;
+}
+.footer-container{
+  display: block;
+  height: 5vh;
+  background-color: black;
+  border: 2px solid white;
+  height: fit-content;
+}
+.footer-text{
+  background-color: black;
+  color: white;
+  border: none;
+  margin-bottom: 0;
+}
+.copyright{
+  background-color: black;
+  color: white;
+  margin-top: 0;
+  border:none;
+}
+a{
+  color: white;
+  transition: color .2s;
+}
+a:hover{
+  color: blueviolet;
+}
+}
+@media screen and (max-width: 959px){
+   ::-webkit-scrollbar {
+    height: 2px;
+    width: 3px;
+  }
+  .heading-container{
+    width: 100%;
+    background-color: white;
+    border: 2 px solid black;
+    margin-bottom: 1%;
+  }
+  .bioheading{
+    width: 100%;
+    text-align: center;
+    margin-bottom: 0;
+  }
+  .writername{
+    text-align: center;
+    margin-top: 0;
+    /* font-family: 'Roboto Condensed', sans-serif; */
+    font-family: 'Gugi', cursive;
+  }
+  #article-container{
+    overflow-x: hidden;
+    display: grid;
+    /* background-image: url("tilepattern.");
+    background-repeat: repeat; */
+    height: 100vh;
+    width: 100vw;
+    grid-template-columns: 100%;
+    grid-template-rows: 5% 5% 2.5% fit-content(100%) 10% 10% 5% fit-content(100%) fit-content(100%)  5% 10%; ;
+  }
+  #article-title{
+    background-color: black;
+    padding: 0 1%;
+    border: 2px solid white;
+    font-family: 'Gugi', cursive;
+    color:rgb(208, 255, 0);
+  grid-row: 2;
+    justify-self: center;
+    align-self: center;
+    font-size: 300%;
+    font-weight: bold;
+  }
+  #intro-text{
+    /* margin: 3% 0;
+    width: 90vw;
+    height: fit-content;
+    justify-self: center;
+    font-family: 'Roboto Mono', monospace;
+    text-align: center;
+    font-size: 125%;
+    background-color: black;
+    border: 2px solid white;
+    color: white;
+    grid-row: 4; */
+    display: none;
+  }
+  #intro-text-smallscreen{
+    margin: 3% 0;
+    width: 90vw;
+    height: fit-content;
+    justify-self: center;
+    font-family: 'Roboto Mono', monospace;
+    text-align: center;
+    font-size: 125%;
+    background-color: black;
+    border: 2px solid white;
+    color: white;
+    grid-row: 4;
+  }
+  #artist-container{
+    justify-self: center;
+    padding-top: 1%;
+    background-image: url("http://media.northbynorthwestern.com.s3.amazonaws.com/uploads/2019/05/29/coolaesthetic-two.png");
+    border: 2px solid white;
+    background-repeat: repeat;
+    scroll-behavior: smooth;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    width: 90vw;
+    grid-row: 6;
+    height: 30vh;
+    display: flex;
+    flex-direction: row;
+    
+   align-self: center;
+  }
+  .artist:click{
+    transform: scale(1.2);
+  
+  }
+  .artist{
+  
+    height: 25vh;
+    width: 30vw;
+    margin: 0 5%;
+    transition: transform .5s;
+    transform: scale(1.0);
+  }
+  img{
+    height: 30vh;
+  }
+  #bio-container{
+    /* background-color: rgb(0, 49, 15); */
+    padding-top: 10%;
+    background-image: url("http://media.northbynorthwestern.com.s3.amazonaws.com/uploads/2019/05/29/coolaesthetic-dark.png");
+    background-repeat: repeat;
+    grid-row: 8;
+    border: 2px solid white;
+    overflow-y: scroll;
+    height: 80vh;
+    width: 90vw;
+    justify-self: center;
+  }
+  .artist-bio{
+    font-size: 120%;
+    color: black;
+    margin: 0 10%;
+  }
+  #arrow-right{
+    display: none;
+  }
+  #arrow-left{
+    display: none;
+  }
+  #return{
+    width: 91vw;
+    justify-self: center;
+   grid-row: 10;
+  }
+  h2{
+    font-family: 'Gugi', cursive;
+  }
+  h3{
+    font-family: 'Roboto Condensed', sans-serif;
+  }
+  p{
+    background-color: white;
+    padding: 1% 1%;
+    border: 2px solid black;
+    font-family: 'Roboto Mono', monospace;
+  }
+  button{
+    background-color: black;
+    border: 2px solid white;
+    color: white;
+    width: 100%;
+    /* font-family: 'Gugi', cursive; */
+    font-family: 'Roboto Mono', monospace;
+    font-weight: bold;
+    white-space: nowrap;
+    padding: 0 3%;
+  }
+  button:hover{
+    background-color: white;
+    color: black;
+  }
+  .bioheading{
+    text-align: center;
+  }
+  #homepage-footer{
+  grid-row: 11;
+  width: 91vw;
+  justify-self: center;
+  }
+  .footer-container{
+    display: block;
+    height: 5vh;
+    background-color: black;
+    border: 2px solid white;
+    height: fit-content;
+   
+  }
+  .footer-text{
+    margin: 0% 5%;
+    background-color: black;
+    color: white;
+    border: none;
+  }
+  .copyright{
+    background-color: black;
+    color: white;
+    margin: 0% 5%;
+    border:none;
+    margin-bottom: 5%;
+  }
+  a{
+    color: white;
+    transition: color .2s;
+  }
+  a:hover{
+    color: blueviolet;
+  }
+  
+
+  }
+  </style>
+  <div id="article-container">
    
    <div id="article-title">Dillo Day 2019</div>
    <div id="article-body"></div>
@@ -73,7 +476,7 @@
      <strong>Lyrics to memorize: </strong>
      <br>
      <br>
-     (From "Plain Jane”)
+     (From “Plain Jane”)
      <br>
      <br>
      “Ride with the mob
@@ -294,7 +697,117 @@
     </footer>
  </div>
  
+  <script>
+    // $(document).ready(function(){
+    //     console.log("ready!");
+    // })
+
+    var biobox = $("#bio-container");
+    biobox.hide();
+    var returnButton = $("#return");
+    returnButton.hide();
+    var denzelbio = $("#denzelbio");
+    denzelbio.hide();
+    var fergbio = $("#fergbio");;
+    fergbio.hide();
+    var mortybio = $("#mortybio");
+    mortybio.hide();
+    var williebio = $("#williebio");
+    williebio.hide();
+    var davebio = $("#davebio");
+    davebio.hide();
+    var rogerbio = $("#rogerbio");
+    rogerbio.hide();
+    var spideybio = $("#spideybio");
+    spideybio.hide();
+    var biolist = ["blank", denzelbio, fergbio, mortybio, williebio, davebio, rogerbio, spideybio];
+    var currentArtist = 0;
+    function artistClick(selectedArtist) {
+      if (currentArtist === selectedArtist) {
+        window.scrollTo(0, 0);
+
+        setTimeout(function () {
+          returnButton.hide();
+          var previousArtist = currentArtist;
+          currentArtist = 0;
+          biobox.slideUp(200);
+          biolist[previousArtist].hide();
+
+        }, 450)
+      }
+      else if (currentArtist === 0) {
+        biolist[selectedArtist].show();
+        currentArtist = selectedArtist;
+        biobox.slideDown(200);
+        setTimeout(function () {
+          returnButton.show();
+          var newheight = $("#bio-container")[0].scrollHeight;
+          window.scrollTo(0, newheight);
+
+        }, 400);
+
+
+      }
+      else {
+        biolist[currentArtist].hide();
+        biolist[selectedArtist].show();
+        currentArtist = selectedArtist;
+        biobox.slideDown(250);
+        setTimeout(function () {
+          window.scrollTo(0, document.body.scrollHeight);
+          returnButton.show();
+        }, 250);
+        returnButton.show();
+      }
+    }
+
+    $("#denzel")[0].addEventListener("click", function () {
+      artistClick(1);
+    })
+    $("#ferg")[0].addEventListener("click", function () {
+      artistClick(2);
+
+    })
+    $("#morty")[0].addEventListener("click", function () {
+      artistClick(3);
+
+    })
+    $("#willie")[0].addEventListener("click", function () {
+      artistClick(4);
+
+    })
+    $("#dave")[0].addEventListener("click", function () {
+      artistClick(5);
+
+    })
+    $("#roger")[0].addEventListener("click", function () {
+      artistClick(6);
+
+    })
+    $("#spidey")[0].addEventListener("click", function () {
+      artistClick(7);
+
+    })
+    $("#arrow-right")[0].addEventListener("click", function () {
+      console.log("click works");
+
+      $("#artist-container").scrollLeft($("#artist-container").scrollLeft() + 2000);
+    })
+    $("#arrow-left")[0].addEventListener("click", function () {
+      console.log("click works");
+      $("#artist-container").scrollLeft($("#artist-container").scrollLeft() - 2000);
+    })
+    returnButton[0].addEventListener("click", function () {
+      window.scrollTo(0, 0);
+      setTimeout(function () {
+        returnButton.hide();
+        var previousArtist = currentArtist;
+        currentArtist = 0;
+        biobox.slideUp(450);
+        biolist[previousArtist].hide();
+      }, 250)
+
+    })
+  </script>
 </body>
 </html>
-  <script type="text/javascript" src="main.js">
-    </script>
